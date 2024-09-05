@@ -627,7 +627,7 @@ u32 xp_alloc_batch(struct xsk_buff_pool *pool, struct xdp_buff **xdp, u32 max)
 {
 	u32 nb_entries1 = 0, nb_entries2;
 
-	if (unlikely(pool->dev && dma_dev_need_sync(pool->dev))) {
+	if (true/*unlikely(pool->dev && dma_dev_need_sync(pool->dev))*/) {
 		struct xdp_buff *buff;
 
 		/* Slow path */
